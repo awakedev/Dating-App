@@ -42,6 +42,8 @@ namespace DatingApp.API
             }
 
             // app.UseHttpsRedirection();
+
+            
             app.UseMvc();
         }
     }
