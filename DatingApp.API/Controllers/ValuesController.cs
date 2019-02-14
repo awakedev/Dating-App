@@ -11,7 +11,11 @@ using Microsoft.EntityFrameworkCore;
 namespace DatingApp.API.Controllers
 {
     [Route("api/[controller]")]
+
+    // Auto validates requests.
     [ApiController]
+
+    // ControllerBase provides access to HTTP responses without view support.
     public class ValuesController : ControllerBase
     {
         private readonly DataContext _context;
