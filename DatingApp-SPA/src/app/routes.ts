@@ -6,9 +6,9 @@ import { MemberListComponent } from "./member-list/member-list.component";
 import { MessagesComponent } from "./messages/messages.component";
 
 export const appRoutes: Routes = [
-  { path: "home", component: HomeComponent },
+  { path: "", component: HomeComponent },
   {
-    path: '',
+    path: "",
     runGuardsAndResolvers: "always",
     canActivate: [AuthGuard],
     children: [
@@ -17,5 +17,5 @@ export const appRoutes: Routes = [
       { path: "lists", component: ListsComponent }
     ]
   },
-  { path: "**", redirectTo: "home", pathMatch: "full" }
+  { path: "**", redirectTo: "", pathMatch: "full" }
 ];
