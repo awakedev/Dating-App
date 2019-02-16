@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DatingApp.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Data
 {
@@ -19,12 +20,12 @@ namespace DatingApp.API.Data
 
         public void Delete<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+            _context.Remove(entity);
         }
 
         public Task<User> GetUser()
         {
-            throw new System.NotImplementedException();
+           var user = _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public Task<IEnumerable<User>> GetUsers()
